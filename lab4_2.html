@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Масив</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>Завдання 2</h1>
+    <div class="array-container">
+        <p>Початковий масив:</p>
+        <div class="array-output" id="initialArray"></div>
+        <p>Мінімальний елемент поміняно з третім:</p>
+        <div class="array-output" id="modifiedArray"></div>
+    </div>
+
+    <div class="button-container">
+        <button class="task-button" onclick="window.location.href='index.html'">На головну</button>
+    </div>
+
+    <script>
+        const array = [];
+        for (let i = 0; i < 15; i++) {
+            array.push(Math.floor(Math.random() * 100)); 
+        }
+
+        document.getElementById("initialArray").textContent = array.join(", ");
+
+        let minIndex = 0;
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] < array[minIndex]) {
+                minIndex = i;
+            }
+        }
+
+        const temp = array[2];
+        array[2] = array[minIndex];
+        array[minIndex] = temp;
+
+        document.getElementById("modifiedArray").textContent = array.join(", ");
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фрукти</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="array-container">
+        <script>
+            let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+            let citrus = ['orange', 'lemon', 'lime'];
+
+            document.write('<p>Масив fruits: ' + JSON.stringify(fruits) + '</p>');
+            document.write('<p>Масив citrus: ' + JSON.stringify(citrus) + '</p>');
+
+            let combined = fruits.concat(citrus);
+            document.write('<p>Об\'єднаний масив fruits: ' + JSON.stringify(combined) + '</p>');
+
+            let fruitsWithInserted = [...fruits];
+            fruitsWithInserted.splice(3, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+            document.write('<p>Масив fruits із доданими елементами: ' + JSON.stringify(fruitsWithInserted) + '</p>');
+
+            let fruitsWithRemoved = fruits.slice(0, -3);
+            document.write('<p>Масив fruits без останніх 3 елементів: ' + JSON.stringify(fruitsWithRemoved) + '</p>');
+
+            let sortedFruits = [...fruits].sort();
+            document.write('<p>Відсортований масив fruits: ' + JSON.stringify(sortedFruits) + '</p>');
+
+            let reverseSortedFruits = [...fruits].sort().reverse();
+            document.write('<p>Масив fruits у зворотному алфавітному порядку: ' + JSON.stringify(reverseSortedFruits) + '</p>');
+
+            let sortedByLength = [...fruits].sort((a, b) => a.length - b.length);
+            document.write('<p>Масив fruits, відсортований за довжиною слів: ' + JSON.stringify(sortedByLength) + '</p>');
+        </script>
+    </div>
+
+    <div class="button-container">
+        <button class="task-button" onclick="window.location.href='index.html'">На головну</button>
+    </div>
+</body>
+</html>
